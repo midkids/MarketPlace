@@ -11,7 +11,7 @@
         <!--MarketPlace-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MarketPlaceViewController" customModule="MarketPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Home-->
         <scene sceneID="ASs-Zu-g6n">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="pCg-w4-dFm" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="pCg-w4-dFm" customClass="HomeViewController" customModule="MarketPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZDz-bq-wjx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,10 +74,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXE-az-t3p">
-                                <rect key="frame" x="157" y="319" width="78" height="35"/>
+                                <rect key="frame" x="132" y="319" width="129" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Search"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search Result"/>
                                 <connections>
                                     <segue destination="gRe-SZ-JwP" kind="show" id="Kn4-hu-V0b"/>
                                 </connections>
@@ -104,7 +104,7 @@
         <!--Seller-->
         <scene sceneID="opp-of-OhD">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BbC-Nl-JkN" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BbC-Nl-JkN" customClass="SellerViewController" customModule="MarketPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7dE-he-Ug0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
         <!--Search Result-->
         <scene sceneID="Gb9-5T-0Qb">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="gRe-SZ-JwP" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="gRe-SZ-JwP" customClass="SearchResultViewController" customModule="MarketPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LTm-4l-kpc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
         <!--Product-->
         <scene sceneID="veg-iw-h1G">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="VRs-Pp-3El" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="VRs-Pp-3El" customClass="ProductViewController" customModule="MarketPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nwi-zM-Fna">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,7 +174,7 @@
         <!--profileScreen-->
         <scene sceneID="dl2-Jd-Etm">
             <objects>
-                <viewController title="profileScreen" modalPresentationStyle="fullScreen" id="9ZX-X6-YgU" sceneMemberID="viewController">
+                <viewController title="profileScreen" modalPresentationStyle="fullScreen" id="9ZX-X6-YgU" customClass="ProfileViewController" customModule="MarketPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bKj-Tz-Pbh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
