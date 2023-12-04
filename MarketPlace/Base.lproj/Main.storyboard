@@ -71,7 +71,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Product"/>
                                 <connections>
-                                    <segue destination="VRs-Pp-3El" kind="show" identifier="homeToProductSegue" id="CJJ-TV-m4r"/>
+                                    <segue destination="VRs-Pp-3El" kind="show" identifier="homeToProductSegue" destinationCreationSelector="showProduct:" id="CJJ-TV-m4r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwT-q2-5ul">
@@ -272,8 +272,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="paZ-aa-qVk"/>
-        <segue reference="WHZ-Er-Gky"/>
+        <segue reference="T0J-t7-mgJ"/>
+        <segue reference="CJJ-TV-m4r"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="marketplace_icon" width="341.33334350585938" height="341.33334350585938"/>

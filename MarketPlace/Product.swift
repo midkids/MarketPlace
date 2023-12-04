@@ -21,7 +21,10 @@ struct Seller {
 }
 
 var products: [Product] = [
-    Product(productImage: UIImage.self(named: "marketplace.jpg")!, productName: "product1", productPrice: 50, productDescription: "This is just a first test description for a test product", productSeller: Seller(sellerName: "John Smith")),
-    Product(productImage: UIImage.self(named: "marketplace.jpg")!, productName: "product1", productPrice: 50, productDescription: "This is just a second test description for a test product", productSeller: Seller(sellerName: "John Smith")),
-    Product(productImage: UIImage.self(named: "marketplace.jpg")!, productName: "product1", productPrice: 50, productDescription: "This is just a third test description for a test product", productSeller: Seller(sellerName: "John Smith"))
+    Product(productImage: UIImage(imageLiteralResourceName: "marketplace.jpg"), productName: "product1", productPrice: 50, productDescription: "This is just a first test description for a test product", productSeller: Seller(sellerName: "John Smith")),
+    Product(productImage: UIImage(imageLiteralResourceName: "marketplace.jpg"), productName: "product1", productPrice: 50, productDescription: "This is just a second test description for a test product", productSeller: Seller(sellerName: "John Smith")),
+    Product(productImage: UIImage(imageLiteralResourceName: "marketplace.jpg"), productName: "product1", productPrice: 50, productDescription: "This is just a third test description for a test product", productSeller: Seller(sellerName: "John Smith"))
 ]
+
+var sellers: [Seller] = [
+    Seller(sellerName: "John Smith")]
