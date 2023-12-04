@@ -15,6 +15,17 @@ class ProductViewController: UIViewController {
     @IBOutlet var productDescriptionLabel: UILabel!
     @IBOutlet var sellerNameButton: UIButton!
     
+    var currentProductIndex: Int
+    
+    init?(coder: NSCoder, currentProductIndex: Int) {
+        self.currentProductIndex = currentProductIndex
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +34,7 @@ class ProductViewController: UIViewController {
     }
     
     func updateUI() {
-        let currentProduct = products[0]
+        let currentProduct = products[currentProductIndex]
         let currentSeller = currentProduct.productSeller
         productImageImage.image = currentProduct.productImage
         productNameLabel.text = currentProduct.productName

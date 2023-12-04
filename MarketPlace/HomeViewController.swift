@@ -8,14 +8,19 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    var currentProductIndex = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBSegueAction func showProduct(_ coder: NSCoder) -> ProductViewController? {
+        return ProductViewController(coder: coder, currentProductIndex: currentProductIndex)
+    }
+    
     /*
     // MARK: - Navigation
 
