@@ -75,7 +75,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Product"/>
                                 <connections>
-                                    <segue destination="VRs-Pp-3El" kind="show" identifier="homeToProductSegue" destinationCreationSelector="showProduct:" id="CJJ-TV-m4r"/>
+                                    <action selector="productButtonPressed:" destination="pCg-w4-dFm" eventType="touchUpInside" id="kZm-T3-rVb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwT-q2-5ul">
@@ -84,7 +84,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Seller"/>
                                 <connections>
-                                    <segue destination="BbC-Nl-JkN" kind="show" identifier="homeToSellerSegue" id="4FC-7X-zo3"/>
+                                    <action selector="sellerButtonPressed:" destination="pCg-w4-dFm" eventType="touchUpInside" id="tZv-0Z-9tF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXE-az-t3p">
@@ -93,7 +93,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Search Result"/>
                                 <connections>
-                                    <segue destination="gRe-SZ-JwP" kind="show" id="Kn4-hu-V0b"/>
+                                    <action selector="searchButtonPressed:" destination="pCg-w4-dFm" eventType="touchUpInside" id="WDE-Tq-tE8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eg-II-AhV">
@@ -102,7 +102,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Profile"/>
                                 <connections>
-                                    <segue destination="9ZX-X6-YgU" kind="show" identifier="homeToProfileSegue" id="T0J-t7-mgJ"/>
+                                    <action selector="profileButtonPressed:" destination="pCg-w4-dFm" eventType="touchUpInside" id="KhD-G1-fPA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,6 +110,12 @@
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="never" id="Z1J-7O-cmU"/>
+                    <connections>
+                        <segue destination="VRs-Pp-3El" kind="show" identifier="homeToProductSegue" id="eLj-hd-aZC"/>
+                        <segue destination="BbC-Nl-JkN" kind="show" identifier="homeToSellerSegue" id="yzD-0V-Eaf"/>
+                        <segue destination="9ZX-X6-YgU" kind="show" identifier="homeToProfileSegue" id="ugn-uN-Gbb"/>
+                        <segue destination="gRe-SZ-JwP" kind="show" identifier="homeToSearchResultSegue" id="95I-jL-pmk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5q5-Zf-luI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,10 +128,24 @@
                     <view key="view" contentMode="scaleToFill" id="7dE-he-Ug0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hu-wC-zKa">
+                                <rect key="frame" x="154" y="165" width="85" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Product"/>
+                                <connections>
+                                    <action selector="productButtonPressed:" destination="BbC-Nl-JkN" eventType="touchUpInside" id="9XL-1F-LYl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TU0-Hq-AW4"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Seller" id="GgW-As-mrb"/>
+                    <connections>
+                        <segue destination="VRs-Pp-3El" kind="show" identifier="sellerToProductSegue" id="ubm-tc-jwM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZp-vE-Xw1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,7 +165,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Product"/>
                                 <connections>
-                                    <segue destination="VRs-Pp-3El" kind="show" identifier="searchResultToProductSegue" id="WHZ-Er-Gky"/>
+                                    <action selector="productButtonPressed:" destination="gRe-SZ-JwP" eventType="touchUpInside" id="5eK-Kh-2fv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -153,6 +173,9 @@
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search Result" id="VsX-mc-Ran"/>
+                    <connections>
+                        <segue destination="VRs-Pp-3El" kind="show" identifier="searchResultToProductSegue" id="c86-R9-uSw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48V-cJ-KgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,16 +193,16 @@
                                 <rect key="frame" x="10" y="66" width="373" height="710"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SMZ-dY-c1Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="261"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="278"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZi-Gs-j66" userLabel="productName">
-                                        <rect key="frame" x="0.0" y="266" width="373" height="21.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="283" width="373" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdh-el-Ww4" userLabel="productPrice">
-                                        <rect key="frame" x="0.0" y="292.33333333333331" width="373" height="36.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="308.33333333333331" width="373" height="20.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -238,7 +261,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Profile"/>
                                                         <connections>
-                                                            <segue destination="9ZX-X6-YgU" kind="show" identifier="productToProfileSegue" id="paZ-aa-qVk"/>
+                                                            <action selector="profileButtonPressed:" destination="VRs-Pp-3El" eventType="touchUpInside" id="1X1-u1-XAS"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -269,11 +292,12 @@
                         <outlet property="productPriceLabel" destination="hdh-el-Ww4" id="jx6-np-bun"/>
                         <outlet property="saveButton" destination="Xjd-db-JOq" id="nal-4T-zMY"/>
                         <outlet property="sellerNameButton" destination="xAN-Rr-odd" id="6ra-W7-HO3"/>
+                        <segue destination="9ZX-X6-YgU" kind="show" identifier="productToProfileSegue" id="7FC-1t-Xep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1f2-vS-zFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2857.2519083969464" y="669.71830985915494"/>
+            <point key="canvasLocation" x="2883" y="649"/>
         </scene>
         <!--profileScreen-->
         <scene sceneID="dl2-Jd-Etm">
@@ -313,8 +337,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="paZ-aa-qVk"/>
-        <segue reference="CJJ-TV-m4r"/>
+        <segue reference="7FC-1t-Xep"/>
+        <segue reference="c86-R9-uSw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="marketplace_icon" width="341.33334350585938" height="341.33334350585938"/>

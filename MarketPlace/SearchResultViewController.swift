@@ -9,12 +9,25 @@ import UIKit
 
 class SearchResultViewController: UIViewController {
 
+    var currentProductName = ""
+    var currentProductIndex = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
+    @IBAction func productButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "searchResultToProductSegue", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "searchResultToProductSegue" {
+            let destinationViewController = segue.destination as? ProductViewController
+            destinationViewController?.currentProductIndex = currentProductIndex
+        }
+    }
 
     /*
     // MARK: - Navigation

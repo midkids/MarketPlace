@@ -10,15 +10,47 @@ import UIKit
 class HomeViewController: UIViewController {
     
     var currentProductIndex = 6
+    var currentProductName = ""
+    var currentSellerName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
+    @IBAction func sellerButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "homeToSellerSegue", sender: self)
+    }
     
+    @IBAction func productButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "homeToProductSegue", sender: self)
+    }
     
-    @IBSegueAction func showProduct(_ coder: NSCoder) -> ProductViewController? {
-        return ProductViewController(coder: coder, currentProductIndex: currentProductIndex)
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "homeToSearchResultSegue", sender: self)
+    }
+    
+    @IBAction func profileButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "homeToProfileSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeToSellerSegue" {
+            let destinationViewController = segue.destination as? SellerViewController
+            destinationViewController?.currentSellerName = currentSellerName
+        }
+        if segue.identifier == "homeToSearchResultSegue" {
+            let destinationViewController = segue.destination as? SearchResultViewController
+            destinationViewController?.currentProductName = currentProductName
+        }
+        if segue.identifier == "homeToProductSegue" {
+            let destinationViewController = segue.destination as? ProductViewController
+            destinationViewController?.currentProductIndex = currentProductIndex
+        }
+        if segue.identifier == "homeToProfileSegue" {
+            let destinationViewController = segue.destination as? ProfileViewController
+            destinationViewController?.currentSellerName = currentSellerName
+        }
     }
     
     /*

@@ -9,12 +9,25 @@ import UIKit
 
 class SellerViewController: UIViewController {
 
+    var currentSellerName = ""
+    var currentProductIndex = 2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func productButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "sellerToProductSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sellerToProductSegue" {
+            let destinationViewController = segue.destination as? ProductViewController
+            destinationViewController?.currentProductIndex = currentProductIndex
+        }
+    }
 
     /*
     // MARK: - Navigation

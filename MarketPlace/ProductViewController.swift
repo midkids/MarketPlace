@@ -17,16 +17,8 @@ class ProductViewController: UIViewController {
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var sellerNameButton: UIButton!
     
-    var currentProductIndex: Int
-    
-    init?(coder: NSCoder, currentProductIndex: Int) {
-        self.currentProductIndex = currentProductIndex
-        super.init(coder: coder)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var currentProductIndex: Int = 0
+    var currentSellerName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +38,18 @@ class ProductViewController: UIViewController {
         productDescriptionLabel.text = currentProduct.productDescription
         sellerNameButton.setTitle(currentSeller.sellerName, for: .normal)
         
+    }
+    
+    @IBAction func profileButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "productToProfileSegue", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "productToProfileSegue" {
+            let destinationViewController = segue.destination as? ProfileViewController
+            destinationViewController?.currentSellerName = currentSellerName
+        }
     }
     
 

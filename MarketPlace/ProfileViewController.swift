@@ -11,6 +11,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    var currentSellerName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
