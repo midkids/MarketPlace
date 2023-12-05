@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var currentProductIndex = 1
+    var currentProductIndex = 6
     
     override func viewDidLoad() {
         super.viewDidLoad()

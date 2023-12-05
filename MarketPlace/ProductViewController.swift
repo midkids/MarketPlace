@@ -13,6 +13,8 @@ class ProductViewController: UIViewController {
     @IBOutlet var productNameLabel: UILabel!
     @IBOutlet var productPriceLabel: UILabel!
     @IBOutlet var productDescriptionLabel: UILabel!
+    @IBOutlet var buyButton: UIButton!
+    @IBOutlet var saveButton: UIButton!
     @IBOutlet var sellerNameButton: UIButton!
     
     var currentProductIndex: Int
@@ -28,7 +30,9 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        buyButton.layer.cornerRadius = 15
+        saveButton.layer.cornerRadius = 15
+        sellerNameButton.layer.cornerRadius = 15
         // Do any additional setup after loading the view.
         updateUI()
     }

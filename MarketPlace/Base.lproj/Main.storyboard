@@ -34,6 +34,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmX-QP-cbd" userLabel="Log In">
                                         <rect key="frame" x="0.0" y="469.33333333333326" width="353" height="34.333333333333314"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Log In"/>
                                         <connections>
@@ -52,6 +53,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MarketPlace" largeTitleDisplayMode="always" id="Blj-i7-RRf"/>
+                    <connections>
+                        <outlet property="loginButton" destination="BmX-QP-cbd" id="cZD-w6-GK4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,53 +166,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mfw-PP-Bh6">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mfw-PP-Bh6" userLabel="productStack">
                                 <rect key="frame" x="10" y="66" width="373" height="710"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SMZ-dY-c1Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="261"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZi-Gs-j66" userLabel="productName">
-                                        <rect key="frame" x="0.0" y="138" width="373" height="20.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="266" width="373" height="21.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdh-el-Ww4" userLabel="productPrice">
-                                        <rect key="frame" x="0.0" y="168.33333333333334" width="373" height="20.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="292.33333333333331" width="373" height="36.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjW-Fj-cSc" userLabel="productDescription">
-                                        <rect key="frame" x="0.0" y="198.66666666666669" width="373" height="20.333333333333343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjW-Fj-cSc" userLabel="productDescription">
+                                        <rect key="frame" x="0.0" y="334" width="373" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Fzy-vc-Mre"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-U4-VIV" userLabel="buySellStack">
-                                        <rect key="frame" x="0.0" y="229" width="373" height="34.333333333333314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bsm-mr-Dxb" userLabel="bottomStack">
+                                        <rect key="frame" x="0.0" y="539" width="373" height="171"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXJ-oO-74K">
-                                                <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="34.333333333333336"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Buy"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-db-JOq">
-                                                <rect key="frame" x="211.66666666666663" y="0.0" width="161.33333333333337" height="34.333333333333336"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-U4-VIV" userLabel="buySaveStack">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXJ-oO-74K">
+                                                        <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Q1l-qp-6Iv"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="efe-jf-ZjD"/>
+                                                            <constraint firstAttribute="width" constant="100" id="zID-dh-Guh"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Buy"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-db-JOq">
+                                                        <rect key="frame" x="211.66666666666663" y="0.0" width="161.33333333333337" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-EW-hse" userLabel="sellerInfoStack">
+                                                <rect key="frame" x="0.0" y="70" width="373" height="101"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click for seller information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWe-ZB-ICp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-Rr-odd">
+                                                        <rect key="frame" x="0.0" y="51" width="373" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="BKF-0n-tmq"/>
+                                                            <constraint firstAttribute="width" constant="100" id="ggf-gc-cFf"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Profile"/>
+                                                        <connections>
+                                                            <segue destination="9ZX-X6-YgU" kind="show" identifier="productToProfileSegue" id="paZ-aa-qVk"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="DpE-EW-hse" secondAttribute="bottom" id="K4R-T7-qkv"/>
+                                        </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-Rr-odd">
-                                        <rect key="frame" x="0.0" y="273.33333333333326" width="373" height="436.66666666666674"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Profile"/>
-                                        <connections>
-                                            <segue destination="9ZX-X6-YgU" kind="show" identifier="productToProfileSegue" id="paZ-aa-qVk"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -223,10 +262,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Product" id="9dY-Hr-UMw"/>
                     <connections>
+                        <outlet property="buyButton" destination="bXJ-oO-74K" id="3Ds-9q-lUU"/>
                         <outlet property="productDescriptionLabel" destination="ZjW-Fj-cSc" id="fTA-ty-OsB"/>
                         <outlet property="productImageImage" destination="SMZ-dY-c1Q" id="WCe-YW-FgG"/>
                         <outlet property="productNameLabel" destination="qZi-Gs-j66" id="Rfm-wd-GBa"/>
                         <outlet property="productPriceLabel" destination="hdh-el-Ww4" id="jx6-np-bun"/>
+                        <outlet property="saveButton" destination="Xjd-db-JOq" id="nal-4T-zMY"/>
                         <outlet property="sellerNameButton" destination="xAN-Rr-odd" id="6ra-W7-HO3"/>
                     </connections>
                 </viewController>
@@ -272,13 +313,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T0J-t7-mgJ"/>
+        <segue reference="paZ-aa-qVk"/>
         <segue reference="CJJ-TV-m4r"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="marketplace_icon" width="341.33334350585938" height="341.33334350585938"/>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

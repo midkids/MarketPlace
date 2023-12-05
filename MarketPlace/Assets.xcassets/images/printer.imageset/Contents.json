@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "marketplace.jpg",
+      "filename" : "printer.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "marketplace@2x.jpg",
+      "filename" : "printer@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "marketplace@3x.jpg",
+      "filename" : "printer@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
