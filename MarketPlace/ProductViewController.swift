@@ -48,6 +48,7 @@ class ProductViewController: UIViewController {
         
     }
     
+    // Added comment to establish my branch in GitHub
 
     /*
     // MARK: - Navigation
