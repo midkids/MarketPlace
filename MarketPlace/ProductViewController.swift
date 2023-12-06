@@ -19,6 +19,7 @@ class ProductViewController: UIViewController {
     
     var currentProductIndex: Int = 0
     var currentSellerName = ""
+    var currentUserName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,13 @@ class ProductViewController: UIViewController {
     }
     
     func updateUI() {
-        let currentProduct = products[currentProductIndex]
-        let currentSeller = currentProduct.productSeller
-        productImageImage.image = currentProduct.productImage
-        productNameLabel.text = currentProduct.productName
-        productPriceLabel.text = "$" + String(currentProduct.productPrice)
-        productDescriptionLabel.text = currentProduct.productDescription
-        sellerNameButton.setTitle(currentSeller.sellerName, for: .normal)
+//        let currentProduct = products[currentProductIndex]
+//        let currentSeller = currentProduct.productSeller
+//        productImageImage.image = currentProduct.productImage
+//        productNameLabel.text = currentProduct.productName
+//        productPriceLabel.text = "$" + String(currentProduct.productPrice)
+//        productDescriptionLabel.text = currentProduct.productDescription
+//        sellerNameButton.setTitle(currentSeller.sellerName, for: .normal)
         
     }
     
