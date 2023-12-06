@@ -19,6 +19,7 @@ class ProductViewController: UIViewController {
     
     var currentProductIndex: Int = 0
     var currentSellerName = ""
+    var currentUserName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

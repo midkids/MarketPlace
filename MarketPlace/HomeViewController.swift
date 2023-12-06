@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     var currentProductIndex = 6
     var currentProductName = ""
     var currentSellerName = ""
+    var currentUserName = "elf101"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class HomeViewController: UIViewController {
         if segue.identifier == "homeToProductSegue" {
             let destinationViewController = segue.destination as? ProductViewController
             destinationViewController?.currentProductIndex = currentProductIndex
+            destinationViewController?.currentUserName = currentUserName
         }
         if segue.identifier == "homeToProfileSegue" {
             let destinationViewController = segue.destination as? ProfileViewController
