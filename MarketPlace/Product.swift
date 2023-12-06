@@ -35,3 +35,13 @@ var sellers: [Seller] = [
     Seller(sellerName: "rudolph27"),
     Seller(sellerName: "frosty981")
 ]
+
+struct User {
+    var userName: String
+    var userPassword: String
+}
+
+struct Saved {
+    var savedUserName: String
+    var savedProducts: [Product]
+}
