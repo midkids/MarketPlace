@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SHX-6h-3Ah">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ion-hS-dt8">
-                                <rect key="frame" x="102.33333333333337" y="402" width="188.66666666666663" height="152.33333333333337"/>
+                                <rect key="frame" x="102.33333333333337" y="402" width="188.66666666666663" height="191.66666666666663"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpQ-rA-j3z">
                                         <rect key="frame" x="0.0" y="0.0" width="188.66666666666666" height="34.333333333333336"/>
@@ -102,6 +102,14 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Print All Users Names"/>
                                         <connections>
                                             <action selector="printAllUsers" destination="pCg-w4-dFm" eventType="touchUpInside" id="Qmc-v6-4iG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7z-5A-fkV">
+                                        <rect key="frame" x="0.0" y="157.33333333333337" width="188.66666666666666" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Print all listings"/>
+                                        <connections>
+                                            <action selector="printAllListings" destination="pCg-w4-dFm" eventType="touchUpInside" id="ihG-DW-Wtl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -143,22 +151,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="googlenesthub" translatesAutoresizingMaskIntoConstraints="NO" id="EVD-tY-tWM">
-                                <rect key="frame" x="163" y="53" width="114" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="flf-TG-HnL" appends="YES" id="PLn-Qi-t1o"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jacket" translatesAutoresizingMaskIntoConstraints="NO" id="1DP-St-Mp9">
-                                <rect key="frame" x="58" y="81" width="70" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="wOf-gQ-bV0" appends="YES" id="iuk-To-noD"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qBB-ax-QUZ"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,24 +161,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="MarketPlace" largeTitleDisplayMode="never" style="browser" customizationIdentifier="" id="Z1J-7O-cmU"/>
                     <connections>
-                        <outlet property="googleNest" destination="EVD-tY-tWM" id="eQg-PQ-jQg"/>
                         <segue destination="VRs-Pp-3El" kind="show" identifier="homeToProductSegue" id="eLj-hd-aZC"/>
                         <segue destination="BbC-Nl-JkN" kind="show" identifier="homeToSellerSegue" id="yzD-0V-Eaf"/>
                         <segue destination="9ZX-X6-YgU" kind="show" identifier="homeToProfileSegue" id="ugn-uN-Gbb"/>
-                        <segue destination="gRe-SZ-JwP" kind="show" identifier="homeToSearchResultSegue" id="95I-jL-pmk"/>
+                        <segue destination="gRe-SZ-JwP" kind="presentation" identifier="homeToSearchResultSegue" id="95I-jL-pmk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5q5-Zf-luI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="flf-TG-HnL">
-                    <connections>
-                        <action selector="googleNestTapped:" destination="pCg-w4-dFm" id="SOq-dQ-SbY"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="wOf-gQ-bV0">
-                    <connections>
-                        <action selector="googleNestTapped:" destination="pCg-w4-dFm" id="eEl-b3-nUh"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1777.8625954198474" y="8.4507042253521139"/>
         </scene>
@@ -242,13 +223,10 @@
                         <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search Result" id="VsX-mc-Ran"/>
-                    <connections>
-                        <segue destination="VRs-Pp-3El" kind="show" identifier="searchResultToProductSegue" id="c86-R9-uSw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48V-cJ-KgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="839"/>
+            <point key="canvasLocation" x="1305" y="820"/>
         </scene>
         <!--Product-->
         <scene sceneID="veg-iw-h1G">
@@ -366,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1f2-vS-zFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2883" y="649"/>
+            <point key="canvasLocation" x="2298" y="856"/>
         </scene>
         <!--profileScreen-->
         <scene sceneID="dl2-Jd-Etm">
@@ -406,12 +384,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ugn-uN-Gbb"/>
+        <segue reference="7FC-1t-Xep"/>
         <segue reference="eLj-hd-aZC"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="googlenesthub" width="274.33334350585938" height="145.33332824707031"/>
-        <image name="jacket" width="166.66667175292969" height="213.33332824707031"/>
         <image name="marketplace_icon" width="341.33334350585938" height="341.33334350585938"/>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

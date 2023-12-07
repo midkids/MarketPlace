@@ -13,35 +13,13 @@ class HomeViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate)
         .persistentContainer.viewContext
     
-    var currentProductIndex = 6
-    var currentProductName = ""
-    var currentSellerName = ""
-    var currentUserName = "elf101"
-    
-    var listings : [Listing]?
-    
-    @IBOutlet weak var googleNest: UIImageView!
+    let listings : [Listing]? = nil
+    let chosenListing : Listing? = nil
+    let currentUser : User? = nil
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-
-    
-    
-    @IBAction func googleNestTapped(_ sender: UITapGestureRecognizer) {
-        print( googleNest == sender.view )
-        print("google nest tapped")
-    }
-    
-    // database operations
-    func fetchListings() {
-        do {
-            self.listings = try context.fetch(Listing.fetchRequest())
-            print(self.listings ?? "There are no listings")
-        } catch {
-            print("there was an error")
-        }
     }
     
     @IBAction func addUser() {
@@ -119,6 +97,25 @@ class HomeViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func printAllListings() {
+        do {
+            let request = Listing.fetchRequest() as NSFetchRequest<Listing>
+            let listings = try context.fetch(request)
+            
+            for listing in listings {
+                print(listing.productTitle ?? "no title")
+                print(listing.productDescription ?? "no description")
+                if let seller = listing.soldBy {
+                    print(seller.username ?? "no seller user name")
+                } else {
+                    print("no seller")
+                }
+            }
+        } catch {
+            print("error fetching listings")
+        }
+    }
 
     //segues
     @IBAction func sellerButtonPressed(_ sender: UIButton) {
@@ -138,23 +135,30 @@ class HomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "homeToSellerSegue" {
-//            let destinationViewController = segue.destination as? SellerViewController
-//            destinationViewController?.currentSellerName = currentSellerName
-//        }
-//        if segue.identifier == "homeToSearchResultSegue" {
-//            let destinationViewController = segue.destination as? SearchResultViewController
-//            destinationViewController?.currentProductName = currentProductName
-//        }
-//        if segue.identifier == "homeToProductSegue" {
-//            let destinationViewController = segue.destination as? ProductViewController
-//            destinationViewController?.currentProductIndex = currentProductIndex
-//            destinationViewController?.currentUserName = currentUserName
-//        }
-//        if segue.identifier == "homeToProfileSegue" {
-//            let destinationViewController = segue.destination as? ProfileViewController
-//            destinationViewController?.currentSellerName = currentSellerName
-//        }
+        
+        if segue.identifier == "homeToSellerSegue" {
+            if let sellerViewController = segue.destination as? SellerViewController{
+            }
+        }
+        
+        if segue.identifier == "homeToSearchResultSegue" {
+            if let searchResultController = segue.destination as? SearchResultViewController {
+                
+            }
+        }
+        
+        if segue.identifier == "homeToProductSegue" {
+            if let productViewController = segue.destination as? ProductViewController {
+                productViewController.listing = chosenListing
+            }
+        }
+        
+        if segue.identifier == "homeToProfileSegue" {
+            if let profileViewController = segue.destination as? ProfileViewController {
+                profileViewController.user = currentUser
+            }
+            
+        }
     }
     
     /*
