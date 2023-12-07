@@ -18,14 +18,23 @@ class HomeViewController: UIViewController {
     var currentSellerName = ""
     var currentUserName = "elf101"
     
-    
     var listings : [Listing]?
     
+    @IBOutlet weak var googleNest: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
+
+    
+    
+    @IBAction func googleNestTapped(_ sender: UITapGestureRecognizer) {
+        print( googleNest == sender.view )
+        print("google nest tapped")
+    }
+    
+    // database operations
     func fetchListings() {
         do {
             self.listings = try context.fetch(Listing.fetchRequest())
@@ -111,6 +120,7 @@ class HomeViewController: UIViewController {
         
     }
 
+    //segues
     @IBAction func sellerButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "homeToSellerSegue", sender: self)
     }
