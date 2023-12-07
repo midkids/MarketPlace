@@ -47,10 +47,10 @@ class ProductViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "productToProfileSegue" {
-            let destinationViewController = segue.destination as? ProfileViewController
-            destinationViewController?.currentSellerName = currentSellerName
-        }
+//        if segue.identifier == "productToProfileSegue" {
+//            let destinationViewController = segue.destination as? ProfileViewController
+//            destinationViewController?.currentSellerName = currentSellerName
+//        }
     }
     
 
