@@ -11,7 +11,6 @@ class HomeViewController: UIViewController {
     
     var currentProductIndex = 6
     var currentProductName = ""
-    var currentSellerName = ""
     var currentUserName = "elf101"
     
     override func viewDidLoad() {
@@ -38,7 +37,7 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeToSellerSegue" {
             let destinationViewController = segue.destination as? SellerViewController
-            destinationViewController?.currentSellerName = currentSellerName
+            destinationViewController?.currentUserName = currentUserName
         }
         if segue.identifier == "homeToSearchResultSegue" {
             let destinationViewController = segue.destination as? SearchResultViewController
@@ -51,7 +50,7 @@ class HomeViewController: UIViewController {
         }
         if segue.identifier == "homeToProfileSegue" {
             let destinationViewController = segue.destination as? ProfileViewController
-            destinationViewController?.currentSellerName = currentSellerName
+            destinationViewController?.currentUserName = currentUserName
         }
     }
     

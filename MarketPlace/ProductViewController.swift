@@ -32,12 +32,11 @@ class ProductViewController: UIViewController {
     
     func updateUI() {
         let currentProduct = products[currentProductIndex]
-        let currentSeller = currentProduct.productSeller
         productImageImage.image = currentProduct.productImage
         productNameLabel.text = currentProduct.productName
         productPriceLabel.text = "$" + String(currentProduct.productPrice)
         productDescriptionLabel.text = currentProduct.productDescription
-        sellerNameButton.setTitle(currentSeller.sellerName, for: .normal)
+        sellerNameButton.setTitle(currentProduct.productUserName, for: .normal)
         
     }
     
@@ -49,7 +48,7 @@ class ProductViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "productToProfileSegue" {
             let destinationViewController = segue.destination as? ProfileViewController
-            destinationViewController?.currentSellerName = currentSellerName
+            destinationViewController?.currentUserName = currentUserName
         }
     }
     
