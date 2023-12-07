@@ -11,7 +11,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    var currentUserName = ""
+    var user : User? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

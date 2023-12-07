@@ -17,9 +17,7 @@ class ProductViewController: UIViewController {
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var sellerNameButton: UIButton!
     
-    var currentProductIndex: Int = 0
-    var currentSellerName = ""
-    var currentUserName = ""
+    var listing : Listing?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +29,14 @@ class ProductViewController: UIViewController {
     }
     
     func updateUI() {
-//        let currentProduct = products[currentProductIndex]
-//        let currentSeller = currentProduct.productSeller
-//        productImageImage.image = currentProduct.productImage
-//        productNameLabel.text = currentProduct.productName
-//        productPriceLabel.text = "$" + String(currentProduct.productPrice)
-//        productDescriptionLabel.text = currentProduct.productDescription
-//        sellerNameButton.setTitle(currentSeller.sellerName, for: .normal)
         
+        if let currentProduct = listing , let currentSeller = listing?.soldBy {
+            productImageImage.image = UIImage( data: currentProduct.image ?? Data() )
+            productNameLabel.text = currentProduct.productTitle
+            productPriceLabel.text = "$" + String(currentProduct.productPrice)
+            productDescriptionLabel.text = currentProduct.description
+            sellerNameButton.setTitle(currentSeller.username, for: .normal)
+        }
     }
     
     @IBAction func profileButtonPressed(_ sender: UIButton) {
