@@ -31,12 +31,13 @@ class ProductViewController: UIViewController {
     }
     
     func updateUI() {
-        let currentProduct = products[currentProductIndex]
-        productImageImage.image = currentProduct.productImage
-        productNameLabel.text = currentProduct.productName
-        productPriceLabel.text = "$" + String(currentProduct.productPrice)
-        productDescriptionLabel.text = currentProduct.productDescription
-        sellerNameButton.setTitle(currentProduct.productUserName, for: .normal)
+//        let currentProduct = products[currentProductIndex]
+//        let currentSeller = currentProduct.productSeller
+//        productImageImage.image = currentProduct.productImage
+//        productNameLabel.text = currentProduct.productName
+//        productPriceLabel.text = "$" + String(currentProduct.productPrice)
+//        productDescriptionLabel.text = currentProduct.productDescription
+//        sellerNameButton.setTitle(currentSeller.sellerName, for: .normal)
         
     }
     
@@ -48,7 +49,7 @@ class ProductViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "productToProfileSegue" {
             let destinationViewController = segue.destination as? ProfileViewController
-            destinationViewController?.currentUserName = currentUserName
+            destinationViewController?.currentSellerName = currentSellerName
         }
     }
     

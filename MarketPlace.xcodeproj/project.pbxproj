@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114B5AB32B212AAE0083120C /* MarketPlace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114B5AB12B212AAE0083120C /* MarketPlace.xcdatamodeld */; };
+		114B5AF82B2152A70083120C /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B5AF42B2152A70083120C /* User+CoreDataClass.swift */; };
+		114B5AF92B2152A70083120C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B5AF52B2152A70083120C /* User+CoreDataProperties.swift */; };
+		114B5AFA2B2152A70083120C /* Listing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B5AF62B2152A70083120C /* Listing+CoreDataClass.swift */; };
+		114B5AFB2B2152A70083120C /* Listing+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B5AF72B2152A70083120C /* Listing+CoreDataProperties.swift */; };
+		11C815A22B21091300CA00BD /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C815A12B21091300CA00BD /* AppColors.swift */; };
 		2C1A23992B1C0C3400887E19 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A23982B1C0C3400887E19 /* Product.swift */; };
 		2CE30DC32B17A3CF00626113 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE30DC22B17A3CF00626113 /* HomeViewController.swift */; };
 		2CE30DC52B17A3F200626113 /* SellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE30DC42B17A3F200626113 /* SellerViewController.swift */; };
@@ -22,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114B5AA72B21271D0083120C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		114B5AA82B21271D0083120C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		114B5AB22B212AAE0083120C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		114B5AF42B2152A70083120C /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "../../User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		114B5AF52B2152A70083120C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "../../User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		114B5AF62B2152A70083120C /* Listing+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Listing+CoreDataClass.swift"; path = "../../Listing+CoreDataClass.swift"; sourceTree = "<group>"; };
+		114B5AF72B2152A70083120C /* Listing+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Listing+CoreDataProperties.swift"; path = "../../Listing+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		11C815A12B21091300CA00BD /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		2C1A23982B1C0C3400887E19 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		2CE30DC22B17A3CF00626113 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2CE30DC42B17A3F200626113 /* SellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerViewController.swift; sourceTree = "<group>"; };
@@ -49,11 +63,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		114B5AA62B2127030083120C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				114B5AA72B21271D0083120C /* libsqlite3.0.tbd */,
+				114B5AA82B21271D0083120C /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		114B5AB42B212F500083120C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				114B5AF42B2152A70083120C /* User+CoreDataClass.swift */,
+				114B5AF52B2152A70083120C /* User+CoreDataProperties.swift */,
+				114B5AF62B2152A70083120C /* Listing+CoreDataClass.swift */,
+				114B5AF72B2152A70083120C /* Listing+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2CFE6C172B142436004F6217 = {
 			isa = PBXGroup;
 			children = (
 				2CFE6C222B142436004F6217 /* MarketPlace */,
 				2CFE6C212B142436004F6217 /* Products */,
+				114B5AA62B2127030083120C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +103,7 @@
 		2CFE6C222B142436004F6217 /* MarketPlace */ = {
 			isa = PBXGroup;
 			children = (
+				114B5AB42B212F500083120C /* Model */,
 				2C1A23982B1C0C3400887E19 /* Product.swift */,
 				2CFE6C232B142436004F6217 /* AppDelegate.swift */,
 				2CFE6C252B142436004F6217 /* SceneDelegate.swift */,
@@ -81,6 +117,8 @@
 				2CFE6C2C2B142437004F6217 /* Assets.xcassets */,
 				2CFE6C2E2B142437004F6217 /* LaunchScreen.storyboard */,
 				2CFE6C312B142437004F6217 /* Info.plist */,
+				11C815A12B21091300CA00BD /* AppColors.swift */,
+				114B5AB12B212AAE0083120C /* MarketPlace.xcdatamodeld */,
 			);
 			path = MarketPlace;
 			sourceTree = "<group>";
@@ -158,12 +196,18 @@
 			files = (
 				2CE30DC72B17A43300626113 /* ProfileViewController.swift in Sources */,
 				2CFE6C282B142436004F6217 /* MarketPlaceViewController.swift in Sources */,
+				114B5AFA2B2152A70083120C /* Listing+CoreDataClass.swift in Sources */,
+				114B5AF82B2152A70083120C /* User+CoreDataClass.swift in Sources */,
+				114B5AFB2B2152A70083120C /* Listing+CoreDataProperties.swift in Sources */,
 				2C1A23992B1C0C3400887E19 /* Product.swift in Sources */,
+				11C815A22B21091300CA00BD /* AppColors.swift in Sources */,
 				2CFE6C242B142436004F6217 /* AppDelegate.swift in Sources */,
 				2CE30DC92B17A46000626113 /* ProductViewController.swift in Sources */,
 				2CFE6C262B142436004F6217 /* SceneDelegate.swift in Sources */,
 				2CE30DC52B17A3F200626113 /* SellerViewController.swift in Sources */,
 				2CE30DCB2B17A49A00626113 /* SearchResultViewController.swift in Sources */,
+				114B5AF92B2152A70083120C /* User+CoreDataProperties.swift in Sources */,
+				114B5AB32B212AAE0083120C /* MarketPlace.xcdatamodeld in Sources */,
 				2CE30DC32B17A3CF00626113 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +431,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		114B5AB12B212AAE0083120C /* MarketPlace.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				114B5AB22B212AAE0083120C /* Model.xcdatamodel */,
+			);
+			currentVersion = 114B5AB22B212AAE0083120C /* Model.xcdatamodel */;
+			path = MarketPlace.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2CFE6C182B142436004F6217 /* Project object */;
 }
