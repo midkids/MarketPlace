@@ -229,7 +229,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Q1l-qp-6Iv"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="efe-jf-ZjD"/>
-                                                            <constraint firstAttribute="width" constant="100" id="zID-dh-Guh"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Buy"/>
@@ -251,12 +250,11 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-Rr-odd">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-Rr-odd" userLabel="userNameButton">
                                                         <rect key="frame" x="0.0" y="51" width="373" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="BKF-0n-tmq"/>
-                                                            <constraint firstAttribute="width" constant="100" id="ggf-gc-cFf"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Profile"/>
@@ -291,7 +289,7 @@
                         <outlet property="productNameLabel" destination="qZi-Gs-j66" id="Rfm-wd-GBa"/>
                         <outlet property="productPriceLabel" destination="hdh-el-Ww4" id="jx6-np-bun"/>
                         <outlet property="saveButton" destination="Xjd-db-JOq" id="nal-4T-zMY"/>
-                        <outlet property="sellerNameButton" destination="xAN-Rr-odd" id="6ra-W7-HO3"/>
+                        <outlet property="userNameButton" destination="xAN-Rr-odd" id="luS-Wa-cHj"/>
                         <segue destination="9ZX-X6-YgU" kind="show" identifier="productToProfileSegue" id="7FC-1t-Xep"/>
                     </connections>
                 </viewController>
@@ -306,10 +304,52 @@
                     <view key="view" contentMode="scaleToFill" id="bKj-Tz-Pbh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gcl-JG-4Yb">
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-lq-W6T">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNb-Rk-1NP">
+                                        <rect key="frame" x="0.0" y="40.333333333333329" width="393" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zA7-JH-lDc" userLabel="savedImage">
+                                        <rect key="frame" x="0.0" y="80.666666666666657" width="393" height="241.99999999999997"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ea-3BI">
+                                        <rect key="frame" x="0.0" y="342.66666666666669" width="393" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Om4-1e-43H" userLabel="sellingImage">
+                                        <rect key="frame" x="0.0" y="383" width="393" height="403"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nVv-10-hsL"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="nVv-10-hsL" firstAttribute="bottom" secondItem="Gcl-JG-4Yb" secondAttribute="bottom" id="34v-pH-feT"/>
+                            <constraint firstItem="nVv-10-hsL" firstAttribute="trailing" secondItem="Gcl-JG-4Yb" secondAttribute="trailing" id="7jo-OQ-woQ"/>
+                            <constraint firstItem="Gcl-JG-4Yb" firstAttribute="leading" secondItem="bKj-Tz-Pbh" secondAttribute="leading" id="91t-HW-thf"/>
+                            <constraint firstItem="Gcl-JG-4Yb" firstAttribute="top" secondItem="nVv-10-hsL" secondAttribute="top" id="VGB-Ag-SxF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="RqH-6y-sJA"/>
+                    <connections>
+                        <outlet property="savedImage" destination="zA7-JH-lDc" id="gtb-0s-k6r"/>
+                        <outlet property="sellingImage" destination="Om4-1e-43H" id="xGu-wf-P5B"/>
+                        <outlet property="userNameLabel" destination="ncK-lq-W6T" id="Tts-aJ-Qco"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YaS-rL-3cu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

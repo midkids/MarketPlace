@@ -13,12 +13,23 @@ class ProfileViewController: UIViewController {
 
     var currentUserName = ""
     
+    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var savedImage: UIImageView!
+    @IBOutlet var sellingImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
 
         // Do any additional setup after loading the view.
     }
-    
+    func updateUI() {
+        let currentProduct = products[0]
+        userNameLabel.text = currentProduct.productUserName
+        savedImage.image = currentProduct.productImage
+        sellingImage.image = currentProduct.productImage
+        
+    }
 
     /*
     // MARK: - Navigation

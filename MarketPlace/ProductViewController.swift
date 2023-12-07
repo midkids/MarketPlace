@@ -15,17 +15,16 @@ class ProductViewController: UIViewController {
     @IBOutlet var productDescriptionLabel: UILabel!
     @IBOutlet var buyButton: UIButton!
     @IBOutlet var saveButton: UIButton!
-    @IBOutlet var sellerNameButton: UIButton!
+    @IBOutlet var userNameButton: UIButton!
     
     var currentProductIndex: Int = 0
-    var currentSellerName = ""
     var currentUserName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buyButton.layer.cornerRadius = 15
         saveButton.layer.cornerRadius = 15
-        sellerNameButton.layer.cornerRadius = 15
+        userNameButton.layer.cornerRadius = 15
         // Do any additional setup after loading the view.
         updateUI()
     }
@@ -36,7 +35,7 @@ class ProductViewController: UIViewController {
         productNameLabel.text = currentProduct.productName
         productPriceLabel.text = "$" + String(currentProduct.productPrice)
         productDescriptionLabel.text = currentProduct.productDescription
-        sellerNameButton.setTitle(currentProduct.productUserName, for: .normal)
+        userNameButton.setTitle(currentProduct.productUserName, for: .normal)
         
     }
     
