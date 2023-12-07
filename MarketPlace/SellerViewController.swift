@@ -9,7 +9,7 @@ import UIKit
 
 class SellerViewController: UIViewController {
 
-    var currentSellerName = ""
+    var currentUserName = ""
     var currentProductIndex = 2
     
     override func viewDidLoad() {
