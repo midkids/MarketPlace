@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Listing" representedClassName="Listing" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isSold" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String"/>
+        <attribute name="productPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="productTitle" optional="YES" attributeType="String"/>
+        <relationship name="soldBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="itemsSelling" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="password" attributeType="String"/>
+        <attribute name="profilePicture" optional="YES" attributeType="Binary"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 32" minValueString="0" maxValueString="5" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="username" attributeType="String"/>
+        <relationship name="itemsSelling" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Listing" inverseName="soldBy" inverseEntity="Listing"/>
+    </entity>
+</model>
