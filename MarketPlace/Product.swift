@@ -18,7 +18,7 @@ struct Product {
 }
 
 var products: [Product] = [
-    Product(productID: 1, productImage: UIImage(imageLiteralResourceName: "macbookpro.jpg"), productName: "MacBook Pro", productPrice: 500, productDescription: "2019 MacBook Pro. Intel I5, 8GB RAM, 256GB drive. ", productUserName: "santaclaus349"),
+    Product(productID: 1, productImage: UIImage(imageLiteralResourceName: "macbookpro.jpg"), productName: "MacBook Pro", productPrice: 500, productDescription: "2019 MacBook Pro. Intel I5, 8GB RAM, 256GB drive.", productUserName: "santaclaus349"),
     Product(productID: 2, productImage: UIImage(imageLiteralResourceName: "boots.jpg"), productName: "Women's boots", productPrice: 50, productDescription: "Gently used Ugg boots, size 9.", productUserName: "santaclaus349"),
     Product(productID: 3, productImage: UIImage(imageLiteralResourceName: "jacket.jpg"), productName: "Women's jacket", productPrice: 45, productDescription: "Brand new Amazon Essential lightweight jacket. Color black, size small. Received as gift. Waited too long to send back.", productUserName: "rudolph27"),
     Product(productID: 4, productImage: UIImage(imageLiteralResourceName: "googlenesthub.jpg"), productName: "Google Nest Hub", productPrice: 60, productDescription: "Second generation. 7 inch display, chalk color. Plays videos and music. Use to control smart devices in your home.", productUserName: "rudolph27"),
@@ -32,7 +32,19 @@ struct User {
     var userPassword: String
 }
 
-struct Saved {
+var users: [User] = [
+User(userName: "santaclaus349", userPassword: "SDEV260"),
+User(userName: "rudolph27", userPassword: "SDEV260"),
+User(userName: "frosty981", userPassword: "SDEV260")]
+
+struct SavedProduct {
     var savedUserName: String
-    var savedProducts: [Product]
+    var savedProductIndex: Int
 }
+
+var savedProducts: [SavedProduct] = [
+SavedProduct(savedUserName: "santaclaus349", savedProductIndex: 2),
+SavedProduct(savedUserName: "rudolph27", savedProductIndex: 0),
+SavedProduct(savedUserName: "frosty981", savedProductIndex: 4)
+]
+

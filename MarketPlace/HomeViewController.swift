@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var currentProductIndex = 6
+    var currentProductIndex = 0
     var currentProductName = ""
     var currentUserName = "elf101"
     

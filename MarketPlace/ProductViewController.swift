@@ -39,6 +39,21 @@ class ProductViewController: UIViewController {
         
     }
     
+    @IBAction func buyButtonPressed(_ sender: UIButton) {
+        products.remove(at: currentProductIndex)
+        productDescriptionLabel.text = "Thank you for your purchase."
+    }
+    
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        let currentSavedProduct = SavedProduct(savedUserName: currentUserName, savedProductIndex: currentProductIndex)
+        savedProducts.append(currentSavedProduct)
+        products.remove(at: currentProductIndex)
+        productDescriptionLabel.text = "Saved."
+    }
+    
+    
+    
     @IBAction func profileButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "productToProfileSegue", sender: self)
     }
