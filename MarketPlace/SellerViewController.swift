@@ -19,6 +19,7 @@ class SellerViewController: UIViewController {
     var currentProductPrice = 0
     var currentProductDescription = ""
     
+    @IBOutlet var sellerError: UILabel!
     @IBOutlet var sellerAddButton: UIButton!
     @IBOutlet var sellerUserName: UILabel!
     @IBOutlet var sellerProductName: UITextField!
@@ -29,26 +30,24 @@ class SellerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sellerUserName.text = currentUserName
+        sellerProductName.text = ""
+        sellerError.text = ""
         sellerAddButton.layer.cornerRadius = 15
         sellerImage.image = currentProductImage
         // Do any additional setup after loading the view.
     }
     
     @IBAction func productButtonPressed(_ sender: UIButton) {
-//        currentProductImage = UIImage(imageLiteralResourceName: "macbookpro.jpg")
         if let optionalImage = sellerImage.image {
             currentProductImage = optionalImage
         } else {
             print("User did not provide image")
         }
-//        currentProductName = "MacBook Pro"
         if let optionalProductName = sellerProductName.text {
             currentProductName = optionalProductName
         } else {
             print("User did not provide product name")
         }
-        print(currentProductName)
-//        currentProductPrice = 300
         if let optionalPriceString = sellerPrice.text {
             currentPriceString = optionalPriceString
         } else {
@@ -59,7 +58,6 @@ class SellerViewController: UIViewController {
         } else {
             print("User entered non-integer price")
         }
-//        currentProductDescription = "2019 MacBook Pro. Intel I5, 8GB RAM, 256GB drive."
         if let optionalProductDescription = sellerDescription.text {
             currentProductDescription = optionalProductDescription
         } else {
