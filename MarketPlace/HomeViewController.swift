@@ -11,10 +11,11 @@ class HomeViewController: UIViewController {
     
     var currentProductIndex = 0
     var currentProductName = ""
-    var currentUserName = "elf101"
+    var currentUserName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentUserName = loggedInUserName
         // Do any additional setup after loading the view.
     }
 

@@ -18,7 +18,7 @@ class ProductViewController: UIViewController {
     @IBOutlet var userNameButton: UIButton!
     
     var currentProductIndex: Int = 0
-    var currentUserName = ""
+    var currentUserName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
