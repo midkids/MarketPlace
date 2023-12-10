@@ -24,8 +24,8 @@ class SellerViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sellerToProductSegue" {
-            let destinationViewController = segue.destination as? ProductViewController
-            destinationViewController?.currentProductIndex = currentProductIndex
+//            let destinationViewController = segue.destination as? ProductViewController
+//            destinationViewController?.currentProductIndex = currentProductIndex
         }
     }
 

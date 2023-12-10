@@ -24,8 +24,8 @@ class SearchResultViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchResultToProductSegue" {
-            let destinationViewController = segue.destination as? ProductViewController
-            destinationViewController?.currentProductIndex = currentProductIndex
+//           let destinationViewController = segue.destination as? ProductViewController
+//            destinationViewController?.currentProductIndex = currentProductIndex
         }
     }
 

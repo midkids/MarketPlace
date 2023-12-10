@@ -14,8 +14,8 @@ class HomeViewController: UIViewController {
         .persistentContainer.viewContext
     
     let listings : [Listing]? = nil
-    let chosenListing : Listing? = nil
-    let currentUser : User? = nil
+    var chosenListing : Listing? = nil
+    var currentUser : User? = nil
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
         
         do {
             try self.context.save()
+            currentUser = newUser
             print("user added")
         } catch {
             print("there was an error saving the user")
@@ -48,13 +49,20 @@ class HomeViewController: UIViewController {
     
     @IBAction func addListing() {
         let newListing = Listing(context: self.context)
+        if let image = UIImage(named: "macbookpro.jpg") {
+            if let data = image.jpegData(compressionQuality: 0.8) {
+                newListing.image = data
+            }
+        }
         newListing.isSold = false
         newListing.productDescription = "These are the best running shoes"
         newListing.productPrice = 45.00
         newListing.productTitle = "Running Shoes"
+        newListing.soldBy = currentUser
         
         do{
             try self.context.save()
+            chosenListing = newListing
             print("Listing added")
         } catch {
             print("there was an error saving the listing")

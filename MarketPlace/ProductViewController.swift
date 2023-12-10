@@ -29,12 +29,15 @@ class ProductViewController: UIViewController {
     }
     
     func updateUI() {
-        
         if let currentProduct = listing , let currentSeller = listing?.soldBy {
-            productImageImage.image = UIImage( data: currentProduct.image ?? Data() )
+            if let imageData = currentProduct.image {
+                if let image = UIImage(data: imageData) {
+                    productImageImage.image = image
+                }
+            }
             productNameLabel.text = currentProduct.productTitle
             productPriceLabel.text = "$" + String(currentProduct.productPrice)
-            productDescriptionLabel.text = currentProduct.description
+            productDescriptionLabel.text = currentProduct.productDescription
             sellerNameButton.setTitle(currentSeller.username, for: .normal)
         }
     }
