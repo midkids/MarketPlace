@@ -23,10 +23,17 @@ class MarketPlaceViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        if let userName = loginUserName.text {
+        guard let userName = loginUserName.text else { return }
             loggedInUserName = userName
-            performSegue(withIdentifier: "loginToNavigationSegue", sender: self)
+        guard loggedInUserName != "" else {
+            loginUserName.text = "Please enter Username"
+            return
         }
+        guard loggedInUserName != "Please enter Username" else {
+            loginUserName.text = "Please enter valid Username"
+            return
+        }
+        performSegue(withIdentifier: "loginToNavigationSegue", sender: self)
     }
 }
 
