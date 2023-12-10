@@ -50,3 +50,9 @@ SavedProduct(savedUserName: "rudolph27", savedProductIndex: 0),
 SavedProduct(savedUserName: "frosty981", savedProductIndex: 4)
 ]
 
+extension User: Equatable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        lhs.userName == rhs.userName && lhs.userPassword == rhs.userPassword
+    }
+    
+}

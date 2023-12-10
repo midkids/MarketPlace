@@ -9,12 +9,16 @@ import UIKit
 
 class MarketPlaceViewController: UIViewController {
 
+    var loggedInUserPassword = ""
+    
     @IBOutlet var loginUserName: UITextField!
     @IBOutlet var loginPassword: UITextField!
     @IBOutlet var loginButton: UIButton!
-
+    @IBOutlet var loginError: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginError.text = ""
         // Do any additional setup after loading the view.
         loginButton.layer.cornerRadius = 15
     }
@@ -26,11 +30,18 @@ class MarketPlaceViewController: UIViewController {
         guard let userName = loginUserName.text else { return }
             loggedInUserName = userName
         guard loggedInUserName != "" else {
-            loginUserName.text = "Please enter Username"
+            loginError.text = "Please enter Username"
             return
         }
-        guard loggedInUserName != "Please enter Username" else {
-            loginUserName.text = "Please enter valid Username"
+        guard let userPassword = loginPassword.text else { return }
+            loggedInUserPassword = userPassword
+        guard loggedInUserPassword != "" else {
+            loginError.text = "Please enter Password"
+            return
+        }
+        let validatedUser = User(userName: loggedInUserName, userPassword: loggedInUserPassword)
+        guard users.contains(validatedUser) else {
+            loginError.text = "UserName and Password not found"
             return
         }
         performSegue(withIdentifier: "loginToNavigationSegue", sender: self)
