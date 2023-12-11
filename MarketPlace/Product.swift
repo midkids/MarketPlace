@@ -41,13 +41,13 @@ User(userName: "frosty981", userPassword: "SDEV260")]
 
 struct SavedProduct {
     var savedUserName: String
-    var savedProductIndex: Int
+    var savedProductID: Int
 }
 
 var savedProducts: [SavedProduct] = [
-SavedProduct(savedUserName: "santaclaus349", savedProductIndex: 2),
-SavedProduct(savedUserName: "rudolph27", savedProductIndex: 0),
-SavedProduct(savedUserName: "frosty981", savedProductIndex: 4)
+SavedProduct(savedUserName: "santaclaus349", savedProductID: 3),
+SavedProduct(savedUserName: "rudolph27", savedProductID: 1),
+SavedProduct(savedUserName: "frosty981", savedProductID: 5)
 ]
 
 extension User: Equatable {

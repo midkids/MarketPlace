@@ -19,6 +19,8 @@ class ProductViewController: UIViewController {
     
     var currentProductIndex: Int = 0
     var currentUserName: String = ""
+    var currentProductID: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class ProductViewController: UIViewController {
     
     func updateUI() {
         let currentProduct = products[currentProductIndex]
+        currentProductID = currentProduct.productID
         productImageImage.image = currentProduct.productImage
         productNameLabel.text = currentProduct.productName
         productPriceLabel.text = "$" + String(currentProduct.productPrice)
@@ -46,7 +49,7 @@ class ProductViewController: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        let currentSavedProduct = SavedProduct(savedUserName: currentUserName, savedProductIndex: currentProductIndex)
+        let currentSavedProduct = SavedProduct(savedUserName: currentUserName, savedProductID: currentProductID)
         savedProducts.append(currentSavedProduct)
         products.remove(at: currentProductIndex)
         productDescriptionLabel.text = "Saved."
